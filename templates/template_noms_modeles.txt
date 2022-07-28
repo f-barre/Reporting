@@ -1,0 +1,6 @@
+Pour attribuer des primes aux consultants, vous pouvez déposer un tableau excel avec le nom/prénom du consultant et la prime qui lui est attribué.
+Le tableau est à déposer dans ce dossier, pour que cela fonctionne veuillez respecter les règles suivantes:
+	- Fichier au format ".xlsx"
+	- Nom du fichier doit être le numéro du mois du reporting, si on est en mai(05), le fichier doit porter le nom "04"
+	- Pour les mois à 1 chiffre mettre un zéro devant
+	- Noms autorisés: 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12

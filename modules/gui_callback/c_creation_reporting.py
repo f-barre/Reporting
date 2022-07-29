@@ -44,7 +44,7 @@ def c_completer_reporting_mensuel():
         dprint("Remplissage de la feuille des consultants forfait", priority_level=5)
         creation_feuille_exception_forfait_du_reporting(agency_name)
 
-        # On créer la feuille d'exceptions des consultants payés au forfait qui seront dans le reporting
+        # On créer la feuille des primes des consultants dans le reporting
         dprint("Vérification de la présence ou non du fichier des primes", priority_level=4)
         if not os.path.isfile(get_agency_path("primes", agency_name)):
             dprint("Non présent, création du fichier lancée", priority_level=4)

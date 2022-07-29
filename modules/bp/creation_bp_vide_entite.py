@@ -1,6 +1,3 @@
-# Librairies
-import os.path
-
 # Modules / Dépendances
 from tools.date_info import get_year
 

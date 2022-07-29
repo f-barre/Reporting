@@ -18,33 +18,25 @@ except FileNotFoundError:
 
 class BaseConfig(object):
     APPLICATION_NAME = 'Reporting'
-    DEBUG = 1
     BASE_DIR = BASE_DIR
 
 
 class ProductionConfig(BaseConfig):
     ENV = "production"
-    LISTE_PRIMES_A_COMPTER = [
-
-    ]
+    MODE_PRIMES = "drag and drop"  # "drag and drop" | "tableau"
+    DELTA_MONTH = 1
     DEBUG = 1
     PRIORITY_DEBUG_LEVEL = 100
+    FOLDER_NAME = "Business_Plan_et_Reporting"
+
     GUI_PROPERTIES = {
         "bg": "black",
         "size": ["800", "500"],
         "title": "Menu reporting",
-        "nb btns": 5,
+        "nb btns": 4,
         "space between btn": 10
     }
-    BOONDMANAGER_API_URL = SECRET_CONFIG_STORE["boondManager_api_url"]
-    BOONDMANAGER_API_LOGIN = SECRET_CONFIG_STORE["boondManager_api_login"]
-    BOONDMANAGER_API_PASSWORD = SECRET_CONFIG_STORE["boondManager_api_password"]
-
-
-class LocalConfig(BaseConfig):
-    ENV = "local"
-    MODE_PRIMES = "tableau"  # "drag and drop" | "tableau"
-    DELTA_MONTH = 1
+    
     AGENCES = [
         "Keystone",
         "Lamarck FS",
@@ -52,6 +44,7 @@ class LocalConfig(BaseConfig):
         "Lamarck Group",
         "Lamarck Solutions"
     ]
+
     NOMS_TEMPLATES = {
         "primes_tableau": "template_feuille_de_primes_tableau.xlsx",
         "primes_drag_and_drop": "template_feuille_de_primes_drag_and_drop.xlsx",
@@ -61,7 +54,9 @@ class LocalConfig(BaseConfig):
         "consultant_forfait": "template_consultants_forfait.xlsx",
         "reporting": "template_reporting.xlsx"
     }
+
     NOM_DOSSIER = "Business_Plan_et_Reporting_YYYY"
+
     NOMS_GENERAUX = {
         "primes_tableau": "Primes_consultants.xlsx",
         "consultant_forfait": "Consultants_payés_au_forfait.xlsx",
@@ -91,9 +86,20 @@ class LocalConfig(BaseConfig):
         "Prime vacances"
     ]
 
+    BOONDMANAGER_API_URL = SECRET_CONFIG_STORE["boondManager_api_url"]
+    BOONDMANAGER_API_LOGIN = SECRET_CONFIG_STORE["boondManager_api_login"]
+    BOONDMANAGER_API_PASSWORD = SECRET_CONFIG_STORE["boondManager_api_password"]
+
+
+
+class LocalConfig(BaseConfig):
+    ENV = "local"
+    MODE_PRIMES = "tableau"  # "drag and drop" | "tableau"
+    DELTA_MONTH = 1
     DEBUG = 1
     PRIORITY_DEBUG_LEVEL = 100
     FOLDER_NAME = "Business_Plan_et_Reporting"
+
     GUI_PROPERTIES = {
         "bg": "black",
         "size": ["800", "500"],
@@ -101,6 +107,56 @@ class LocalConfig(BaseConfig):
         "nb btns": 4,
         "space between btn": 10
     }
+    
+    AGENCES = [
+        "Keystone",
+        "Lamarck FS",
+        "Lamarck CS",
+        "Lamarck Group",
+        "Lamarck Solutions"
+    ]
+
+    NOMS_TEMPLATES = {
+        "primes_tableau": "template_feuille_de_primes_tableau.xlsx",
+        "primes_drag_and_drop": "template_feuille_de_primes_drag_and_drop.xlsx",
+        "primes_reporting": "template_feuille_de_primes_reporting.xlsx",
+        "BP": "template_BP.xlsx",
+        "noms_modeles": "template_noms_modeles.txt",
+        "consultant_forfait": "template_consultants_forfait.xlsx",
+        "reporting": "template_reporting.xlsx"
+    }
+
+    NOM_DOSSIER = "Business_Plan_et_Reporting_YYYY"
+
+    NOMS_GENERAUX = {
+        "primes_tableau": "Primes_consultants.xlsx",
+        "consultant_forfait": "Consultants_payés_au_forfait.xlsx",
+        "dossier_primes_drag_and_drop": "Primes",
+        "primes_drag_and_drop": "MM.xlsx",
+        "noms_modeles_drag_and_drop": "Titres_fichiers_règles_à_suivre.txt",
+        "dossier_stockage": "autres",
+        "database": "MM_database.json",
+        "ressources": "MM_all_ressources.json"
+    }
+
+    NOMS_AGENCES = {
+        "BP": "BP.xlsx",
+        "dossier_reporting": "MM",
+        "consultant_forfait": "Consultants_payés_au_forfait.xlsx",
+        "primes": "Primes_Consultants.xlsx",
+        "reporting": "reporting.xlsx",
+        "dossier_stockage": "autres",
+        "database": "MM_database.json",
+        "ressources": "MM_all_ressources.json"
+    }
+
+    LISTE_PRIMES_A_COMPTER = [
+        "Prime d'intervention en propre",
+        "Régularisation prime d'intervention en propre",
+        "Prime de management",
+        "Prime vacances"
+    ]
+
     BOONDMANAGER_API_URL = SECRET_CONFIG_STORE["boondManager_api_url"]
     BOONDMANAGER_API_LOGIN = SECRET_CONFIG_STORE["boondManager_api_login"]
     BOONDMANAGER_API_PASSWORD = SECRET_CONFIG_STORE["boondManager_api_password"]
